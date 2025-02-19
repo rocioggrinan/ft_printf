@@ -1,13 +1,10 @@
 LIB_SRC = ft_converter.c \
 	ft_printf.c \
 	ft_putchar.c \
-	ft_putnbr.c \
+	ft_punt.c \
+	ft_putnbr_base.c \
+	ft_putnbr_sign.c \
 	ft_putstr.c
-	
-	
-	
-	
-
 
 G = \033[1;32m
 R = \033[0;31m
@@ -26,12 +23,12 @@ all: $(NAME)
 	@echo "$(G)██║  ██║╚██████╔╝╚██████╗██║╚██████╔╝$(NC)"
 	@echo "$(G)╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝ ╚═════╝ $(NC)"
 	@echo "$(G)----------------------------------------------------------------------------------------------------$(NC)"
-	@echo "$(G)------------------------------------------ Libft Is Ready ------------------------------------------$(NC)"
+	@echo "$(G)------------------------------------------ Printf Is Ready ------------------------------------------$(NC)"
 	@echo "$(G)----------------------------------------------------------------------------------------------------\n$(NC)"
 $(NAME): $(LIB_OBJ) ft_printf.h
 	@ar -rcs $(NAME) $(LIB_OBJ)
 	@printf "%-106s\r" ""
-	@echo "$(G)------------------------------------ Libft.a Finished Compiling ------------------------------------$(NC)\n"
+	@echo "$(G)------------------------------------ libftprintf.a Finished Compiling ------------------------------------$(NC)\n"
 $(LIB_OBJ_DIR):
 	@mkdir -p $(LIB_OBJ_DIR)
 $(LIB_OBJ_DIR)/%.o: %.c | $(LIB_OBJ_DIR)
@@ -40,7 +37,7 @@ $(LIB_OBJ_DIR)/%.o: %.c | $(LIB_OBJ_DIR)
 	@printf "%-200s\r" ">Libft compiling: ""$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<"
 clean:
 	@rm -rf $(LIB_OBJ_DIR)
-	@echo "$(R)-------------------------------------- Libft Has Been Cleaned --------------------------------------$(NC)"
+	@echo "$(R)-------------------------------------- Printf Has Been Cleaned --------------------------------------$(NC)"
 fclean: clean
 	@rm -f $(NAME)
 re: fclean all

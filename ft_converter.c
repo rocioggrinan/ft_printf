@@ -12,19 +12,19 @@ int ft_converter(char format, va_list arg)
         size += ft_putstr(va_arg(arg, char *));
     }
     else if (format == 'p'){
-        ; //TODO:
+        size += ft_punt(va_arg(arg, void *));
     }
     else if (format == 'd' || format == 'i'){
-        ; //TODO:
+        size += ft_putnbr_base(va_arg(arg, int), "0123456789");
     }
     else if (format == 'u'){
-        ; //TODO:
+        size += ft_putnbr_sign(va_arg(arg, unsigned int), "0123456789");
     }
     else if (format == 'x'){
-        ; //TODO:
+        size += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789abcdef");
     }
     else if (format == 'X'){
-        ; //TODO:
+        size += ft_putnbr_base(va_arg(arg, unsigned int), "0123456789ABCDEF");
     }
     else if (format == '%'){
         ft_putchar('%');

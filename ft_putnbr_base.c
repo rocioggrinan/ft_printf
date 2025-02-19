@@ -1,92 +1,44 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-29 12:33:25 by rogarci2          #+#    #+#             */
-/*   Updated: 2025-01-29 12:33:25 by rogarci2         ###   ########.com      */
-/*                                                                            */
-/* ************************************************************************** */
+#include "ft_printf.h"
 
-#include "printf.h"
-
-static int	ft_abs(int n)
+static int	ft_strlen(char *a)
 {
-	if (n < 0)
-		n = n * -1;
-	return (n);
-}
-static int check(char *base)
-{
-	int count;
-	int count2;
-
-	count = 0;
-	count2 = 0;
-	if (base[0] == '\0' || base[1] == '\0')
-		return (0);
-	while (base[count])
-	{
-		count2 = count + 1;
-		if (base[count] == '+' || base[count] == '-')
-			return (0);
-		if (base[count] < 32 || base[count] > 126)
-			return (0);
-		while (base[count])
-		{
-			if (base[count] == base[count2])
-				return (0);
-			count2++;
-		}
+	int	count = 0;
+	while (a[count] != '\0')
 		count++;
-	}
-	return (1);
+	return (count);
 }
-
-void	ft_putnbr_base(int n, char *base)
+int	ft_putnbr_base(int nbr, char *base)
 {
-	int size;
-	int	array[11];
-	int		counter;
+	unsigned int	num;
+	int				size;
+	int				count;
 
 	size = 0;
-	counter = 0;
-	if (check(base))
-	{
-		if (n < 0)
-		{
-			n = -n;
-			write(base, "-", 1);
-		}
-		while (base[size])
-			size++;
-		while (n || n != 0)
-		{
-			array[counter++] = ft_abs(n % 10) + '0';
-			n = n / 10;
-		}
-		while (--counter >= 0)
-			ft_putchar(base[array[counter]]);
-	}
-}
-/*int	main(void)
-{
-	int fd;
-	const char *n = "-2147483648";
+	count = ft_strlen(base);
 
-	fd = open("prueba.txt", O_RDWR, O_APPEND);
-	ft_putnbr_fd(-2147483648, fd);
-	write(fd, "\n", 1);
-	return (0);
-}*/
-int main(void)
+	if (nbr == 0)
+		return (size += ft_putchar('0'));
+
+	if (nbr < 0 && count == 10)
+	{
+		size += ft_putchar('-');
+		num = -nbr;
+	}
+	else
+		num = (unsigned int)nbr;
+
+	if (num >= (unsigned int)count)
+		size += ft_putnbr_base(num / count, base);
+	size += ft_putchar(base[num % count]);
+
+	return (size);
+}
+/*int main(void)
 {
-	int n = 42;
-	char *base = "10";
+	int n = 6;
+	char *base = "3f52a";
 	
-	ft_putnbr_base(n, base);
+	ft_putnbr_ejemplo(n, base);
 	
 	return 0;
-}
+}*/

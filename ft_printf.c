@@ -34,7 +34,7 @@ int ft_printf(char const *format, ...)
         i++;
     }
     va_end(arguments);
-    return(i);
+    return(size);
 }
 /*int main()
 {
@@ -43,3 +43,13 @@ int ft_printf(char const *format, ...)
     ft_putchar (c);
     return (0);
 }*/
+int main(void)
+{
+	int n = -456;
+    void *ptr = &n;
+	//char *base = "3f52a";
+
+	ft_printf("return: %p\n", ptr);
+	printf("return2: %p\n", ptr);
+	return 0;
+}

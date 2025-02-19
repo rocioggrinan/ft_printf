@@ -29,6 +29,8 @@ int ft_converter(char format, va_list arguments);
 int ft_printf(char const *format, ...);
 int  ft_putchar(char c);
 int	ft_putstr(char *s);
-void	ft_putnbr_base(int n, char *base);
+int	ft_putnbr_base(int n, char *base);
+int	ft_putnbr_sign(unsigned int nbr, char *base);
+int ft_punt(void* ptr);
 
 #endif
