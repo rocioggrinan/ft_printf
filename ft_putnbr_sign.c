@@ -21,13 +21,6 @@ int	ft_putnbr_sign(unsigned long nbr, char *base)
 	count = ft_strlen(base);
 	if (nbr == 0)
 		return (size += ft_putchar('0'));
-	// if (nbr == -2147483648)
-	// 	return (size += ft_putstr("-2147483648"));
-	// if (nbr < 0)
-	// {
-	// 	size += ft_putchar('-');
-	// 	nbr = -nbr;
-	// }
 	if ((long)nbr >= count)
 		size += ft_putnbr_sign(nbr / count, base);
 	size += ft_putchar(base[nbr % count]);

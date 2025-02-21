@@ -6,32 +6,30 @@
 /*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-02-21 09:33:10 by rogarci2          #+#    #+#             */
-/*   Updated: 2025-02-21 09:33:10 by rogarci2         ###   ########.com      */
+/*   Updated: 2025/02/21 15:04:36 by rogarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(int nbr, char *base)
+long	ft_putnbr_base(long nbr, char *base)
 {
-	unsigned int	num;
-	int				size;
-	int				count;
+	long	num;
+	long	size;
+	long	count;
 
 	size = 0;
 	count = ft_strlen(base);
 	if (nbr == 0)
 		return (size += ft_putchar('0'));
-	// if (nbr == -2147483648)
-	// 	return (write(1, "-2147483648", 10));
 	if (nbr < 0 && count == 10)
 	{
 		size += ft_putchar('-');
 		num = -nbr;
 	}
 	else
-		num = (unsigned int)nbr;
-	if (num >= (unsigned int)count)
+		num = (long)nbr;
+	if (num >= count)
 		size += ft_putnbr_base(num / count, base);
 	size += ft_putchar(base[num % count]);
 	return (size);
