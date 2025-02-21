@@ -12,13 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	ft_strlen(char *a)
-{
-	int	count = 0;
-	while (a[count] != '\0')
-		count++;
-	return (count);
-}
 int	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	num;
@@ -27,10 +20,10 @@ int	ft_putnbr_base(int nbr, char *base)
 
 	size = 0;
 	count = ft_strlen(base);
-
 	if (nbr == 0)
 		return (size += ft_putchar('0'));
-
+	// if (nbr == -2147483648)
+	// 	return (write(1, "-2147483648", 10));
 	if (nbr < 0 && count == 10)
 	{
 		size += ft_putchar('-');
@@ -38,19 +31,17 @@ int	ft_putnbr_base(int nbr, char *base)
 	}
 	else
 		num = (unsigned int)nbr;
-
 	if (num >= (unsigned int)count)
 		size += ft_putnbr_base(num / count, base);
 	size += ft_putchar(base[num % count]);
-
 	return (size);
 }
 /*int main(void)
 {
 	int n = 6;
 	char *base = "3f52a";
-	
+
 	ft_putnbr_ejemplo(n, base);
-	
-	return 0;
+
+	return (0);
 }*/

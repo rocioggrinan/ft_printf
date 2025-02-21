@@ -12,44 +12,52 @@
 
 #include "ft_printf.h"
 
-int ft_printf(char const *format, ...)
+int	ft_printf(char const *format, ...)
 {
-    int i;
-    int size; 
-    va_list arguments;
-    size = 0; 
-    i = 0;
-    va_start (arguments, format);
-    if (!format)
-        return (-1);
-    while (format[i] != '\0')
-    {
-        if (format[i] == '%')
-        {
-            size += ft_converter(format[i + 1], arguments);
-            i++;
-        }
-        else 
-            size += ft_putchar(format[i]); 
-        i++;
-    }
-    va_end(arguments);
-    return(size);
+	int		i;
+	int		size;
+	va_list	arguments;
+
+	size = 0;
+	i = 0;
+	va_start(arguments, format);
+	if (!format)
+		return (-1);
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%')
+		{
+			size += ft_converter(format[i + 1], arguments);
+			i++;
+		}
+		else
+			size += ft_putchar(format[i]);
+		i++;
+	}
+	va_end(arguments);
+	return (size);
 }
 /*int main()
 {
-    char    c = 'a';
+	char    c = 'a';
 
-    ft_putchar (c);
-    return (0);
+	ft_putchar (c);
+	return (0);
 }*/
-int main(void)
-{
-	int n = -456;
-    void *ptr = &n;
-	//char *base = "3f52a";
+// int main(void)
+// {
+// char *n = NULL;
+// void *ptr = &n;
+// int num = 6;
+// char c = 'c';
+// int ro = -2147483648;
+// void *s = &ro;
+// char *str = NULL;
+// int hex = 23;
+// //char *base = "3f52a";
 
-	ft_printf("return: %p\n", ptr);
-	printf("return2: %p\n", ptr);
-	return 0;
-}
+// ft_printf("return: %d hola tokfopaf %x\n", ro, hex);
+// // ft_printf("return: %%%%\n");
+// printf("return2: %d, gola jajhsdasd %x\n", ro, hex);
+// return (0);
+// }

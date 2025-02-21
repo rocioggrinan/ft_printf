@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-02-21 09:33:03 by rogarci2          #+#    #+#             */
-/*   Updated: 2025-02-21 09:33:03 by rogarci2         ###   ########.com      */
+/*   Created: 2025-02-21 13:46:32 by rogarci2          #+#    #+#             */
+/*   Updated: 2025-02-21 13:46:32 by rogarci2         ###   ########.com      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_strlen(char *a)
 {
-	if (write(1, &c, 1) == -1)
-		return (-1);
-	return (1);
+	int	count;
+
+	count = 0;
+	while (a[count] != '\0')
+		count++;
+	return (count);
 }

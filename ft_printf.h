@@ -11,26 +11,27 @@
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
 /*===================Includes=================*/
 
 # include <fcntl.h>
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 /*===================Functions=================*/
 
-int ft_converter(char format, va_list arguments);
-int ft_printf(char const *format, ...);
-int  ft_putchar(char c);
+int	ft_converter(char format, va_list arguments);
+int	ft_printf(char const *format, ...);
+int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_putnbr_base(int n, char *base);
-int	ft_putnbr_sign(unsigned int nbr, char *base);
-int ft_punt(void* ptr);
+int	ft_putnbr_sign(unsigned long nbr, char *base);
+int	ft_punt(void *ptr);
+int	ft_strlen(char *a);
 
 #endif

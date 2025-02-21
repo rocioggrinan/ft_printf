@@ -17,9 +17,11 @@ int	ft_putstr(char *s)
 	int	a;
 
 	a = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
 	while (s[a] != '\0')
 		write(1, &s[a++], 1);
-	return a;
+	return (a);
 }
 /*int main (void)
 {

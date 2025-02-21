@@ -4,6 +4,7 @@ LIB_SRC = ft_converter.c \
 	ft_punt.c \
 	ft_putnbr_base.c \
 	ft_putnbr_sign.c \
+	ft_strlen.c \
 	ft_putstr.c
 
 G = \033[1;32m
