@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_converter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
+/*   By: rogarci2 <<rogarci2@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-02-21 09:29:41 by rogarci2          #+#    #+#             */
-/*   Updated: 2025-02-21 09:29:41 by rogarci2         ###   ########.com      */
+/*   Created: 2025/02/21 09:29:41 by rogarci2          #+#    #+#             */
+/*   Updated: 2025/02/21 15:56:58 by rogarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdarg.h>
 
 int	ft_converter(char format, va_list arg)
 {

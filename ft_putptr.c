@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base_punt.c                              :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
+/*   By: rogarci2 <<rogarci2@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-02-21 14:15:56 by rogarci2          #+#    #+#             */
-/*   Updated: 2025/02/21 15:16:56 by rogarci2         ###   ########.fr       */
+/*   Created: 2025/02/21 14:15:56 by rogarci2          #+#    #+#             */
+/*   Updated: 2025/02/26 19:23:57 by rogarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int	len_ptr(unsigned long nb)
 	}
 	return (len);
 }
-
 static void	ft_put_ptr(unsigned long nb)
 {
 	if (nb >= 16)
@@ -43,7 +42,6 @@ static void	ft_put_ptr(unsigned long nb)
 			ft_putchar((nb - 10 + 'a'));
 	}
 }
-
 int	ft_putptr(unsigned long ptr)
 {
 	int	char_printed;

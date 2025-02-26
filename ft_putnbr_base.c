@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarci2 <rogarci2@student.42madrid.com>   #+#  +:+       +#+        */
+/*   By: rogarci2 <<rogarci2@student.42madrid.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-02-21 09:33:10 by rogarci2          #+#    #+#             */
-/*   Updated: 2025/02/21 15:04:36 by rogarci2         ###   ########.fr       */
+/*   Created: 2025/02/21 09:33:10 by rogarci2          #+#    #+#             */
+/*   Updated: 2025/02/26 19:04:56 by rogarci2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long	ft_putnbr_base(long nbr, char *base)
 		num = -nbr;
 	}
 	else
-		num = (long)nbr;
+		num = nbr;
 	if (num >= count)
 		size += ft_putnbr_base(num / count, base);
 	size += ft_putchar(base[num % count]);

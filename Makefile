@@ -1,7 +1,6 @@
 LIB_SRC = ft_converter.c \
 	ft_printf.c \
 	ft_putchar.c \
-	ft_punt.c \
 	ft_putnbr_base.c \
 	ft_putnbr_sign.c \
 	ft_strlen.c \
