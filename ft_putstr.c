@@ -23,13 +23,3 @@ int	ft_putstr(char *s)
 		write(1, &s[a++], 1);
 	return (a);
 }
-/*int main (void)
-{
-	int fd;
-	char *s = "hola partdpa";
-	int a;
-
-	fd = open("prueba.txt", O_RDWR, O_APPEND);
-	ft_putstr_fd(s, fd);
-	return(0);
-}*/

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
 static int	len_ptr(unsigned long nb)
@@ -27,6 +26,7 @@ static int	len_ptr(unsigned long nb)
 	}
 	return (len);
 }
+
 static void	ft_put_ptr(unsigned long nb)
 {
 	if (nb >= 16)
@@ -42,6 +42,7 @@ static void	ft_put_ptr(unsigned long nb)
 			ft_putchar((nb - 10 + 'a'));
 	}
 }
+
 int	ft_putptr(unsigned long ptr)
 {
 	int	char_printed;

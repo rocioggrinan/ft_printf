@@ -37,27 +37,3 @@ int	ft_printf(char const *format, ...)
 	va_end(arguments);
 	return (size);
 }
-/*int main()
-{
-	char    c = 'a';
-
-	ft_putchar (c);
-	return (0);
-}*/
-// int main(void)
-// {
-// char *n = NULL;
-// void *ptr = &n;
-// int num = 6;
-// char c = 'c';
-// int ro = -2147483648;
-// void *s = &ro;
-// char *str = NULL;
-// int hex = 23;
-// //char *base = "3f52a";
-
-// ft_printf("return: %d hola tokfopaf %x\n", ro, hex);
-// // ft_printf("return: %%%%\n");
-// printf("return2: %d, gola jajhsdasd %x\n", ro, hex);
-// return (0);
-// }

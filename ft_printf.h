@@ -30,7 +30,7 @@ int		ft_printf(char const *format, ...);
 int		ft_putchar(char c);
 int		ft_putstr(char *s);
 long	ft_putnbr_base(long nbr, char *base);
-int	ft_putptr(unsigned long ptr);
+int		ft_putptr(unsigned long ptr);
 int		ft_putnbr_sign(unsigned long nbr, char *base);
 int		ft_strlen(char *a);
 

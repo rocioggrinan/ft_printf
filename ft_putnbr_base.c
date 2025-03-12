@@ -34,12 +34,3 @@ long	ft_putnbr_base(long nbr, char *base)
 	size += ft_putchar(base[num % count]);
 	return (size);
 }
-/*int main(void)
-{
-	int n = 6;
-	char *base = "3f52a";
-
-	ft_putnbr_ejemplo(n, base);
-
-	return (0);
-}*/
